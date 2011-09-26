@@ -1,0 +1,41 @@
+<div id="article">
+	<a href="<%= url_for @articles.first %>"><h1><%= @articles.first.title %></h1>
+	<h3><%= @articles.first.summary %></h3></a>
+	<% if @articles.first.image.file? %>
+	<div id="first_article_image">
+		<%= link_to image_tag(@articles.first.image.url(:thumb)), @articles.first %>
+	</div>
+	<% end %>
+	<p><%= strip_tags(truncate(@articles.first.body, :length => 700, :separator => '. ')) %>
+<h3><%= link_to("Read more &#187;".html_safe, article_path(@articles.first))%></h3>
+</div>	
+
+<div id="subarticles">
+	<% if @articles[1] %>
+	<div class="article">
+		<a href="<%= url_for article_path(@articles[1]) %>">
+		<h1><%= @articles[1].title %></h1>
+		<p><%= @articles[1].summary %> &#187;</p>
+		</a>
+	</div>
+	<% end %>
+	<% if @articles[2] %>
+	<div class="article">
+		<a href="<%= url_for article_path(@articles[2]) %>">
+		<h1><%= @articles[2].title %></h1>
+		<p><%= @articles[2].summary%> &#187;</p>
+		</a>
+	</div>
+	<% end %>
+	<% if @articles[3] %>
+	<div class="article">
+		<a href="<%= url_for article_path(@articles[3]) %>">
+		<h1><%= @articles[3].title %></h1>
+		<p><%= @articles[3].summary%> &#187;</p>
+		</a>
+	</div>
+	<% end %>
+</div>
+<div id="more_link">
+	<%= link_to "<h3>Older articles</h3>".html_safe, articles_path %>
+</div>

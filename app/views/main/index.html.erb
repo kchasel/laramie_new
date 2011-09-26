@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	
+	<script type="text/javascript" src="http://www.google.com/jsapi?key=ABQIAAAA3Gs677SBA_xNY88vrwIhMxTJQa0g3IQ9GZqIMmInSLzwtGDKaBSMOGfs56xvAPcG0xCxa28NX1G75g"></script>
+	
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/mootools/1.3.1/mootools-yui-compressed.js"></script>
+	
+	<%= stylesheet_link_tag 'application' %>
+	<%= stylesheet_link_tag 'home' %>
+	
+	<%= javascript_include_tag 'application' %>
+	<%= javascript_include_tag 'slideshow' %>
+	
+	<script type="text/javascript">
+		/*window.addEvent('domready', function(){
+			slider = new Fx.Slide('form_box');
+			slider.hide();
+		})*/
+		window.addEvent('domready', function() {
+		  forms_setup();
+		});
+	</script>
+	
+  	<%= csrf_meta_tag %>
+	
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	
+	<title>Northern Laramie Range Alliance</title>
+</head>
+
+<body>
+	
+	<div id="header_bg">
+	</div>
+	
+	<div id="wrapper">
+		
+		<div id="header">
+			
+		<div id="cartoon">
+			
+			<%= image_tag("cartooned-mountains.png") %>
+			
+			<div id="nav">
+				<ul>
+					<li><%= link_to "Home", :controller => "main", :action => "index" %></li>
+					<li><%= link_to "About", :controller => "main", :action => "about" %></li>
+					<li><%= link_to "Calendar", :controller => "calendar", :action => "index" %></li>
+					<li><%= link_to "News", articles_path %>
+					<li><%= link_to "Documents", :controller => "main", :action => "documents" %></li>
+				</ul>
+			</div>
+			
+			<div id="logo"></div>
+		
+		</div>
+		
+		</div>
+		
+		
+		<div id="body">
+		
+			<%= render :partial => 'rightbar' %>
+			
+			<!--- END RIGHTBAR -->
+			<div id="content">
+				<div id="mission_text">We are more than 800 members of the community in central Wyoming who care about our agriculture, wildlife, history, landscape and recreation.</div>
+			
+				<div id="columns">
+					<div id="col1">
+						
+						
+						<div id="info-side">
+							<h1><span class="strong">Wasatch Wind</span> wants to put <span class="strong">wind turbines</span>, <span class="strong">substations</span>, <span class="strong">transmission</span> and <span class="strong">roads</span> into our mountains.</h1>
+							<div id="mini-gallery">
+								<div id="slideshow-container">
+								<% 
+								@num_photos.times do |counter| %>
+									<%= link_to image_tag("photos/gallery_new/photo-#{(counter+1).to_s.rjust(2, '0')}-tn.jpg"), "/assets/photos/gallery_new/photo-#{(counter + 1).to_s.rjust(2, '0')}.jpg", :rel => 'lightbox-small-gallery' %>
+								<% end %>
+								</div>
+							</div>
+							<h3>The Northern Laramie Range Alliance is fighting this industrialization of our pristine mountain country.</h3>
+							<br />
+							<h3><%= link_to "Learn more &#187;".html_safe, :action => "about" %></h3>
+						</div>
+					</div>
+					<div id="col2">
+						
+						<%= render :partial => 'col2_content' %>
+						
+					</div>
+					
+					
+				</div>
+			
+			</div>
+					
+		</div>
+		
+		<div id="footer">
+			
+			<%= render :partial => 'main/footer' %>
+			
+		</div>
+	
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,352 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self
+ *= require slideshow
+*/
+body {
+	
+}
+
+
+h1 {
+	color: #EBB325;
+}
+
+h1 a {
+	color: #EBB325;
+}
+
+h1 a:visited {
+	color: #EBB325;
+}
+
+h2 {
+	color: #A1C39F;
+}
+
+h3 {
+	color: #A1C39F;
+}
+
+h6, h6 a, h6 a:visited {
+	color: #4D5E4C;
+	text-decoration: none;
+}
+
+/* Header ---------------- */
+
+#header_bg {
+	background: url(background.png) bottom left repeat-x;
+	position: absolute;
+	top: 0;
+	min-width: 1050px;
+	width: 100%;
+	z-index: -1;
+	height: 210px;
+}
+
+#header, #cartoon {
+	height: 200px;
+}
+
+#header {
+	background: url(glow.png) top center no-repeat;
+	position: relative;
+}
+
+#cartoon {
+	/*background: url(cartooned-mountains.png) center 320px no-repeat;*/
+	z-index: 5;
+}
+
+#cartoon img {
+	position: absolute;
+	left: 100px;
+	top: 70px;
+}
+
+#header .divider {
+	background: url(support/divider.png);
+	margin-top: 15px;
+	margin-bottom: 15px;
+	height: 2px;
+}
+
+#header a:hover {
+	text-decoration: underline;
+}
+
+/*#header #first_article, #header #first_event {
+	width: 350px;
+	margin: 0 0 0 25px;
+	float: left;
+}
+
+#head_article {
+	font-family: 'Lucida Grande', sans-serif;
+	font-size: 13px;
+	font-weight: normal;
+	color: #A1C39F;
+	border-right: 1px solid #738B71;
+	padding-right: 10px;
+}*/
+
+#nav {
+	margin: 0;
+	float: right;
+	width: 500px;
+}
+
+#nav ul li a {
+	height: 50px;
+	padding-top: 22px;
+}
+
+/* Body --------------------- */
+
+#body {
+	padding: 0px 0px 0px 0px;
+	width: 1050px;
+	overflow: hidden !important;
+	-webkit-border-radius: 6px 6px 0 0 !important;
+	-moz-border-radius: 6px 6px 0 0 !important; border-radius: 6px 6px 0 0 !important; 
+	-o-border-radius: 6px 6px 0 0 !important; -khtml-border-radius: 6px 6px 0 0 !important;
+	-moz-box-shadow: 0px 1px 2px #8A7861;
+	-webkit-box-shadow: 0px 1px 2px #8A7861;
+	box-shadow: 0px 1px 2px #8A7861;
+	position: relative;
+}
+
+#body h2 {
+	color: #4F8059;
+}
+
+#body h3 {
+	color: #7A8765;
+}
+
+#body p {
+	
+}
+
+#body #content {
+	overflow: hidden;
+	padding: 0px;
+}
+
+#body #content #columns {
+	width: 820px;
+	overflow: hidden;
+	background-color: white;
+	border-top: 1px solid #D8E5AF;
+}
+
+#mission_text {
+	font-family: Baskerville, Georgia, serif;
+	font-style: italic;
+	font-size: 19px;
+	font-weight: thin;
+	color: #66705B;
+	text-align: center;
+	padding: 14px;
+	letter-spacing: 1px;
+	border-bottom: 2px solid #869986;
+	/*float: right;*/
+	height: 180px;
+	background: url(photos/gallery/photo_3.jpg) center -50px no-repeat;
+	-webkit-border-radius: 6px 0 0 0 !important;
+	-moz-border-radius: 6px 0 0 0 !important; border-radius: 6px 0 0 0 !important; 
+	-o-border-radius: 6px 0 0 0 !important; -khtml-border-radius: 6px 0 0 0 !important;
+}
+
+#body #photo {
+	text-align: center;
+}
+
+/* Left column ––––––––––––––––––– */
+
+#body #content #col1 {
+	float: left;
+	width: 300px;
+	padding: 10px;
+}
+
+#body #content #col1 #info-side h1 {
+	font-size: 30px;
+	color: #B48558;
+	line-height: 45px;
+}
+
+#body #content #col1 #info-side .strong, #body #content #col1 #info-side h3 a {
+	color: #99431D;
+}
+
+#body #content #col1 #info-side h3 {
+	font-size: 18px;
+	line-height: 40px;
+}
+
+#body #content #col1 #info-side #mini-gallery {
+	position: relative;
+	height: 96px;
+	width: 128px;
+	float: left;
+	margin: 12px 10px 0 0;
+}
+
+#body #content #col1 #info-side #mini-gallery #slideshow-container img {
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	-webkit-border-radius: 3px !important;
+	-moz-border-radius: 3px !important; border-radius: 3px !important; 
+	-o-border-radius: 3px !important; -khtml-border-radius: 3px !important;
+	-moz-box-shadow: 0px 1px 3px #8A7861;
+	-webkit-box-shadow: 0px 1px 3px #8A7861;
+	box-shadow: 0px 1px 3px #8A7861;
+}
+
+/* Center column   ------------------- */
+
+#body #subarticles {
+	position: relative;
+	overflow: hidden;
+	border-top: 2px solid #869986;
+	margin: 5px 0px;
+	padding: 5px 0 0 0;
+}
+
+#body #subarticles .article {
+	float: left;
+	width: 146px;
+	margin: 0px 8px 0 0;
+	border-top: 1px solid #869986;
+}
+
+#body #subarticles .article a, #body #article a {
+	text-decoration: none;
+	display: block;
+	padding: 0 5px;
+}
+
+#body #article a {
+	padding: 0;
+}
+
+#body #subarticles p {
+	margin-top: 0;
+	font-size: 11px;
+}
+
+#body #subarticles .article a:hover {
+	text-decoration: none;
+	display: block;
+}
+
+#body #subarticles .article a:hover p {
+	color: #999;
+}
+
+#body #subarticles .article a:hover h1, #body #article a:hover h1 {
+	color: #FFC227;
+}
+
+#body #article h3 {
+	line-height: 19px;
+}
+
+#body #subarticles .article p {
+	text-align: justify;
+	color: #747474;
+}
+
+#body #article {
+	overflow: hidden;
+}
+
+#body #article:hover h1 {
+}
+
+#body #article #first_article_image {
+	float: right;
+	margin: 15px 0 10px 10px;
+}
+
+#body #article #first_article_image img {
+	border: 1px solid #7D9951;
+}
+
+#body p {
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	font-weight: narrow;
+	color: #484848;
+	line-height: 20px;
+	text-align: justify;
+}
+
+#body #more_link a h3 {
+	font-size: 18px;
+	color: #999;
+	text-align: right;
+	padding: 5px 20px 5px 5px;
+	line-height: 25px;
+	float: right;
+	display: block;
+	background: url(support/link-arrow-gray.png) center right no-repeat;
+}
+
+#body #more_link a:hover h3 {
+	text-decoration: none;
+	color: #B2B2B2;
+}
+
+#body #more_link a:hover {
+	text-decoration: none;
+}
+
+/* Right Column --------------------- */
+
+#body #content #col2 #announcement h1 {
+	font-size: 30px;
+	color: #993D49;
+}
+
+#body #content #col2 #announcement h3, #body #content #col2 #announcement h3 a {
+	font-size: 16px;
+}
+
+#body #content #col2 #announcement h3 a {
+	color: #597899;
+	text-align: right;
+	display: block;
+}
+
+#body #content #col2 {
+	float: right;
+	width: 465px;
+	padding: 10px;
+	padding-right: 20px;
+}
+
+#body #content #col2 .photo {
+	position: relative;
+	margin: 0px;
+	padding: 0px;
+}
+
+#body #content #col2 .photo .overphoto {
+	color: white;
+	position: absolute;
+	bottom: 7px;
+	right: 25px;
+}
+
+#body #content #col2 .photo img {
+	padding: 0px;
+	margin: 0px;
+}

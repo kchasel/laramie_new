@@ -1,0 +1,6 @@
+page.visual_effect :slide_up, 'comment_form'
+page.show 'allcomments'
+page.insert_html :top, 'allcomments', :partial => 'spacer' unless @article.comments.count == 1
+page.insert_html :top, 'allcomments', :partial => 'comment', :locals => { :comment => @comment }
+page << "$('new_comment').reset()"
+page << "if(typeof stickToBottom() == 'function') { stickToBottom() }"

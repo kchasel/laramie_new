@@ -1,0 +1,5 @@
+<div class="single_comment" id="comment_<%= comment.id %>">
+<div class="deletelink"><%= link_to "Delete this comment", :remote => true, :url => account_comment_path(comment), :method => :delete, :confirm => "Are you sure you wish to delete the comment \"#{truncate comment.text}\"?", :before => "Element.replace(this, \"<div id='spinner'></div>\")" %></div>
+<p><%= time_ago_in_words(comment.created_at).humanize %> ago, <b><%= comment.account.firstname %></b> said:</p>
+<p><%= simple_format(comment.text) %></p>
+</div>

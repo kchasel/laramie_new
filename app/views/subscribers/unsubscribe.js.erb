@@ -1,0 +1,3 @@
+$('subscribe_label').set('html', '<%= label_tag :email, "<h2>Unsubscribe | Try again</h2><h3>The e-mail you entered is not in our system</h3>".html_safe %> ');
+
+new Fx.Shake($('unsubscribe_field'), {duration: 80, mode: 'horizontal', times: 8}).start();

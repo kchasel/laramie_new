@@ -1,0 +1,18 @@
+<% content_for :title do %>
+– <%= @article.title %>
+<% end %>
+
+<% content_for :extra_css do %>
+<%= stylesheet_link_tag 'article' %>
+<% end %>
+
+<div id="page_top"></div>
+
+<div id="page_middle">
+
+<%= render :partial => 'complete_article' %>
+</div>
+
+<% content_for :under_body do %>
+<div id="page_bottom"></div>
+<% end %>

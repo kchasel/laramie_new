@@ -1,0 +1,7 @@
+<h3 class="date"><%= @article.created_at.strftime("%A, %B %e, %Y")%></h3>
+<p><h1 class="<%= "impt" if @article.important %>"><%= @article.title %></h1>
+<h2><%= @article.summary %></h2></p>
+<div id="body-text"><% if @article.image.file? %><p><div class='photo'><%= link_to image_tag(@article.image.url(:small)), @article.image.url(:big), :rel => 'lightbox', :title => @article.image_text %><h6><%= @article.image_text %></h6></div></p> <% end %>
+<p><%= auto_link(simple_format(@article.body)) %></p>
+</div>
+<div class="logo-divider"></div>

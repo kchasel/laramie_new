@@ -1,0 +1,23 @@
+<%= form_for [:admin, @event] do |f| %>
+	
+	<%= f.error_messages %>
+	
+	<%= f.label :name, "Name" %><br /><%= f.text_field :name %>
+	
+	<br />
+	<br /><%= f.label :start_at %><br /><%= f.datetime_select(:start_at) %>
+	
+	<br />
+	<br /><%= f.label :end_at %><br /><%= f.datetime_select(:end_at) %>
+	
+	<br />
+	<br />
+	<%= f.label :address %><br /><%= f.text_field(:address) %>
+	
+	<br />
+	<br /><%= f.label :description, "Event Description" %><br /><%= f.text_area :description %>
+	
+	<br />
+	<br /><%= f.submit "Submit" %>
+	
+<% end %>

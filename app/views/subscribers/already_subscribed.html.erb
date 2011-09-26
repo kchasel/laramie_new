@@ -1,0 +1,13 @@
+<% content_for :body_header do %>
+NLRA Listhost – Unsubscribe
+<% end %>
+
+<% content_for :title do %>
+- Subscriber Assistance
+<% end %>
+
+<% form_tag :action => 'unsubscribe', :controller => 'subscribers' do %>
+	<%= label_tag :email, "<h2>Already Subscribed</h2><h3>Your e-mail, #{@subscriber.email}, is already on our list. If you wish to unsubscribe, simply click below.</h3>".html_safe %>
+	<%= hidden_field_tag :email, @subscriber.email %>
+	<%= submit_tag "Unsubscribe" %>
+<% end %>

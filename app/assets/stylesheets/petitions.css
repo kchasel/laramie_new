@@ -1,0 +1,58 @@
+ul {
+	list-style: none none outside;
+	margin: 20px;
+	padding: 0;
+}
+
+li h3 {
+	color:#8B8B8B !important;
+	margin-left: 50px;
+}
+
+.number {
+	font-size: 45px;
+	font-family: 'Myriad Pro', 'Myriad Web', Arial, sans-serif;
+	color: white;
+	line-height: 52px;
+	width: 45px;
+	height: 45px;
+	float: left;
+	text-align: center;
+	background-color: #B6CB51;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px; border-radius: 30px; 
+	-o-border-radius: 30px; -khtml-border-radius: 30px;
+}
+
+.step h1 {
+	color: #5D9932;
+	font-size: 30px;
+	line-height: 45px;
+	margin-left: 50px;
+}
+
+#address {
+	text-align: center;
+}
+
+#address h2 {
+	font-size: 25px;
+	line-height: 35px;
+	color: #4A6999;
+}
+
+#petitions-box {
+	text-align: center;
+}
+
+#petitions-box .petition a {
+	text-decoration: none;
+}
+
+#petitions-box .petition h2 {
+	color: #996C3D;
+}
+
+#petitions-box .petition a:hover h2 {
+	color: #DBA71A;
+}

@@ -1,0 +1,31 @@
+<h1><%= link_to "Home", :controller => 'main', :action => 'index' %> >> <%= link_to "Articles", admin_articles_path %> >> <%= link_to @article.title, admin_article_path(@article) %> >> Editing <%= @article.title %></h1>
+
+<p><h2><%= @article.title %></h2></p>
+
+<%= form_for @article, :url => admin_article_path(@article) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :summary %><br />
+    <%= f.text_field :summary %>
+  </p>
+  <p>
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </p>
+<p>
+	<%= f.check_box :important %>
+	<%= f.label :important, "This is an important article" %>
+
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', admin_article_path(@article) %> |
+<%= link_to 'Back', admin_articles_path %>

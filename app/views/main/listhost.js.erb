@@ -1,0 +1,8 @@
+if(slider.open) {
+	slider.slideOut();
+}
+else {
+	$('form').empty();
+	$('form').adopt(Elements.from("<%= escape_javascript(render :partial => 'main/donate_form') %>"));
+	slider.slideIn();
+}

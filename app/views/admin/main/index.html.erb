@@ -1,0 +1,32 @@
+<h1>Admin Interface</h1>
+<p><h5>Welcome to the admin interface. Please choose your task below or select from the links above.</h5></p>
+<div id="tasks_list">
+	<h1>E-Mails/Mailing List</h1>
+	<ul>
+		<li><%= link_to "Add a new article", new_admin_article_path %></li>
+		<li><%= link_to "Send a custom e-mail to the listhost", :controller => "main", :action => "listhost_mail" %></li>
+	</ul>
+	<h1>Events</h1>
+	<ul>
+		<li><%= link_to "Add a new event to the Calendar", new_admin_event_path %></li>
+		<li><%= link_to "View and edit all events in the Calendar", admin_events_path %></li>
+	</ul>
+	<h1>Articles</h1>
+	<ul>
+		<li><%= link_to "Add a new article", new_admin_article_path %></li>
+		<li><%= link_to "View all articles, edit an article", admin_articles_path %></li>
+	</ul>
+	<h1>Users</h1>
+	<ul>
+		<li><%= link_to "Subscribe a batch of e-mails to the listhost", bulk_emails_admin_users_path %></li>
+		<li><%= link_to "View all users in the system (accounts and subscribers)", admin_users_path %></li>
+	</ul>
+</div>
+<h2>System Stats</h2>
+<div id="system_stats">
+	<ul>
+		<li><b>Rails version:</b> <%= Rails.version %></li>
+		<li><b>Laramie version:</b> 5.0 (total redesign &amp; interior restructuring)
+		<li><b>Server Refresh:</b> 2/10/11 14:00 Paris</li>
+	</ul>
+</div>

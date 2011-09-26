@@ -1,0 +1,13 @@
+<% content_for :title do %>
+– Comment on <%= @article.title %>
+<% end %>
+
+<h2><%= @article.title %></h2>
+
+<div id="stylized" class="form">
+	<div class="topper"><h5>Enter your comment below.</h5></div>
+	<%= form_for [@article, @comment] do |f| %>
+		<%= f.text_area :text, :cols => 52 %>
+		<div class="button_to_right"><%= f.submit :Submit %></div>
+	<% end %>
+</div>

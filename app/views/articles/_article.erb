@@ -1,0 +1,6 @@
+<div class="blogpost <%= "impt" if article.important %>">
+	<a href="<%= url_for article_url(article) %>"><div class="date"><h6><%= article.created_at.strftime("%A %B %d, %Y") %></h6></div><h2><%= article.title %></h2>
+	<h3><%= article.summary %></h3>
+	<p><%= truncate(strip_tags(article.body), :length => 250, :separator => '. ') %>  &#187;</p>
+	</a>
+</div>

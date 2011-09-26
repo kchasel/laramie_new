@@ -1,0 +1,5 @@
+<div class="single_comment" id="comment_<%= comment.id %>">
+<div class="deletelink"><%= link_to "Delete this comment", :remote => true, :url => account_comment_path(comment), :method => :delete, :confirm => "Are you sure you wish to delete your comment \"#{truncate comment.text}\"?", :before => "Element.replace(this, \"<div id='spinner'></div>\")" if comment.account == current_user %></div>
+<p><%= time_ago_in_words(comment.created_at).humanize %> ago, <b><%= comment.account.initials %></b> said:</p>
+<p><%= auto_link simple_format(comment.text) %></p>
+</div>

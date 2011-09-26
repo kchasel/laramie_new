@@ -1,0 +1,14 @@
+<h1><%= link_to "Home", :controller => 'main', :action => 'index' %> >> Articles</h1>
+<p><h5>This is a list of all articles currently in the database, ordered by date of addition. To edit or delete an article or any one/all of its comments, click on it for the options page.</h5></p>
+
+<div id="tasks_list">
+	<ul>
+		<li><%= link_to "Add a new article", new_admin_article_path %></li>
+	</ul>
+</div>
+
+<div id="articles-list">
+<ul>
+	<%= render :partial => 'article', :collection => @articles %>
+</ul>
+</div>

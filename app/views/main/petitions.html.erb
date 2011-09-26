@@ -1,0 +1,32 @@
+<% content_for :body_header do%>
+	Petitions
+<% end %>
+
+<% content_for :extra_css do%>
+	<%= stylesheet_link_tag 'petitions' %>
+<% end %>
+
+<% content_for :title do %>
+- Petitions
+<% end %>
+
+<h3>Signing both of the NLRA petitions will show your support for our cause. Two simple steps!</h3>
+
+<ul>
+	<li>
+		<div class="number">1</div>
+		<div class="step"><h1>Print &amp; complete the petitions</h1></div>
+		<h3>Petitions are in PDF format</h3>
+		<div id="petitions-box">
+			<div class="petition"><a href="/downloads/petition.pdf"><%= image_tag("petition.png") %><h2>NLRA Community Petition</h2></a></div>
+		</div>
+	</li>
+	<li>
+		<div class="number">2</div>
+		<div class="step"><h1>Mail the petitions</h1></div>
+		<h3>to the following address</h3>
+			<div id="address">
+				<h2>NLRA<br />P.O. Box 3215<br />Casper, WY 82602</h2>
+			</div>
+	</li>
+</ul>

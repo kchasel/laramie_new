@@ -1,0 +1,16 @@
+<div id="summary" style="border-bottom: 1px solid #DEDEDE;">
+<h1 style="	font-family: 'Calibri', 'Helvetica', sans-serif;
+	font-size: 18px;
+	text-transform: uppercase;
+	color: #505B40;
+	font-weight: normal;">Upcoming NLRA Event</h1>
+<h2 style="	font-family: 'Lucida Grande', 'Helvetica', sans-serif;
+	font-size: 12px;
+	color: #808000;
+	font-weight: normal;">We've added a new event to the <%= link_to "NLRA Calendar", :action => 'index', :controller => 'calendar', :only_path => false %>. The details are below. Please attend if possible and help make your voice heard!</h2>
+</div>
+
+
+<div style="margin-top: 20px">
+	<%= render :partial => 'events/event_display' %>
+</div>

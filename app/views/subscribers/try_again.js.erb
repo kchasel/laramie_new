@@ -1,0 +1,5 @@
+$('subscribe_label').set({html: '<%= escape_javascript(render :partial => 'try_again') %>'});
+
+new Fx.Shake($('subscribe_status'), {duration: 80, mode: 'horizontal', times: 8}).start();
+
+(function() { $('subscriber_email').value=''; }).delay(500);

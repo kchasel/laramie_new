@@ -1,0 +1,21 @@
+Northern Laramie Range Alliance LISTHOST
+
+--------
+
+Hello <%= @user.email %>,
+
+Welcome to the Northern Laramie Range Alliance's e-mail listhost! From now on, whenever news is made, you'll be among the first to hear about it.
+
+Receive special member-only announcements and notifications, comment on articles and news, sign up to receive postal mailings, and show your full support for our cause!
+
+
+Thanks for subscribing!
+
+
+The staff of NLRA
+
+--------
+
+Visit us online at <%= url_for :action => 'index', :controller => 'main', :only_path => false %>
+
+If you no longer wish to receive e-mails from us, you may unsubscribe by clicking here: <%= url_for :controller => "subscribers", :action => "unsubscribe", :only_path => false %>

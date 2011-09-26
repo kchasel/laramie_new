@@ -1,0 +1,19 @@
+<div id="summary" style="border-bottom: 1px solid #DEDEDE;">
+<h1 style="	font-family: 'Myriad Pro', 'Myriad Web', Arial, sans-serif;
+	font-size: 18px;
+	font-weight: normal;"><%= @article.title %></h1>
+<h2 style="	font-family: 'Georgia', serif;
+	font-size: 13px;
+	font-weight: normal;
+	font-style: italic"><%= @article.summary %></h2>
+</div>
+
+<p>
+
+<% if @article.image.file? %>
+<div id="image"><%= image_tag attachments['image.jpg'].url %></div>
+<% end %>
+
+<%= auto_link(simpler_format(@article.body)) %></p>
+
+<%= link_to "Click here to view this article on our site", article_url(@article, :only_path => false) %>

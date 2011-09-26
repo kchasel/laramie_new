@@ -1,0 +1,76 @@
+#email-body a {
+	color: #80995D;
+}
+
+#email-body, body {
+	font-family: 'Georgia', serif;
+}
+
+#email-body #box {
+	/*width: 700px;*/
+	font-size: 12px;
+	padding: 20px;
+}
+
+#email-body #box #top {
+	background: url(http://www.nlralliance.org/images/mail/logo-gray.png) 0px left no-repeat;
+	height: 40px;
+	position: relative;
+	margin: 0px;
+	
+}
+
+#email-body #box #top #title {
+	position: absolute;
+	line-height: 90px;
+	padding-left: 380px;
+	font-size: 25px;
+	color: #62696E;
+}
+
+#email-body #box #middle {
+	padding: 10px 0px 10px 0px;
+	margin: 0px;
+}
+
+#email-body #box #bottom {
+	padding: 0px;
+	height: 0px;
+	margin: 0px;
+}
+
+#email-body #box .visit {
+	font-family: 'Verdana', 'Helvetica', sans-serif;
+	font-size: 11px;
+	color: #7F7F7F;
+}
+
+#email-body h1 {
+	font-family: 'Verdana', 'Helvetica', sans-serif;
+	font-size: 18px;
+	text-transform: uppercase;
+	color: #505B40;
+	font-weight: normal;
+}
+
+#email-body h2 {
+	font-family: 'Verdana', 'Helvetica', sans-serif;
+	font-size: 12px;
+	color: #808000;
+	font-weight: normal;
+}
+
+#email-body #summary {
+	border-bottom: 1px solid #DEDEDE;
+}
+
+#email-body #copyright {
+	text-align: right;
+	color: #B2B2B2;
+	font-family: 'Lucida Grande';
+	font-size: 9px;
+	padding-right: 0px;
+	line-height: 25px;
+	height: 25px;
+	background: url(http://www.nlralliance.org/images/mail/logo-gray-sm.png) center left no-repeat;
+}

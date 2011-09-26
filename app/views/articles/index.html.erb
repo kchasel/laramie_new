@@ -1,0 +1,53 @@
+<% content_for :rss do %>
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="<%= articles_url(:format => :rss) %>">
+<% end %>
+
+<% content_for :extra_css do %>
+<%= stylesheet_link_tag 'articles' %>
+<% end %>
+
+<% content_for :body_header do %>
+News &amp; Publications
+<% end %>
+
+<% content_for :title do %>
+- News & Publications
+<% end %>
+
+<h3>The complete archive of all NLRA online articles and publications</h3>
+<h4>Articles are grouped chronologically by month. Click on a month at right to skim to the available articles.</h4>
+
+<div id="the_articles">
+
+<div id="date_finder_track">
+<div id="date_finder">
+	
+	<%= link_to_function "Back to top", "new Fx.Scroll(window).toTop()"%>
+	<h3>Choose a date below to jump</h3>
+	<select id="date_picker">
+	<%= date_options_from_collection_for_select(@month_articles)%>
+	</select>
+	<script>
+	$('date_picker').addEvent('change', function() {
+		new Fx.Scroll(window).toElement(this.value);
+	})
+	</script>
+</div>
+</div>
+
+<script>
+window.addEvent('domready', function() {
+	stickyBox($('date_finder'), $('date_finder_track'));
+});
+</script>
+
+<div id="articles_list">
+<% @month_articles.each do |date, articles| %>
+<h1 class="date_link" id="<%= date.month.to_s + "-" + date.year.to_s %>"><%= date.strftime("%B %Y") %></h1>
+<div class="articles_by_month">
+<%= render :partial => 'article', :collection => articles, :spacer_template => 'article_spacer' %>
+</div>
+<% end %>
+</div>
+
+</div>

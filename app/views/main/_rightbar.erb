@@ -1,0 +1,73 @@
+<div id="rightbar">
+	
+	<h1>Get Involved in NLRA</h1>
+
+
+	<% unless request.path_parameters[:controller] == 'subscribers' %>
+	<div id="listhost" class="rightbox">
+			<%= form_tag({ :action => 'create', :controller => 'subscribers' }, :remote => true) %>
+			<div id="subscribe_label"><%= label :subscriber, :email, "<a href='#{url_for :action => 'assistance', :controller => 'subscribers'}'><h2>Latest News</h2></a><h3>Subscribe to our e-mail listhost</h3>".html_safe %></div>
+			<div id="subscribe_status"><%= render :partial => 'subscribers/form' %></div>
+			</form>
+	
+	</div>
+	<% end %>
+
+	<% unless request.path_parameters[:action] == 'donate' %>
+	<div id="donate" class="rightbox">
+	
+		<%= render "main/donate_form" %>
+
+	</div>
+	<% end %>
+	
+	<div id="petitions">
+	<a href="<%= url_for :action => 'petitions', :controller => 'main' %>">
+		<%= image_tag("support/link-arrow-yellow.png", :class => 'submit_image') %>
+	<h2>Sign the Petitions</h2>
+	<h3>Nearly 900 submitted so far</h3>
+	</a>
+	
+	</div>
+	
+	<div id="twitter">
+	
+	<div class="header"><h2>NLRA Twitter Feed</h2>
+	<h3>The latest NLRA updates</h3></div>
+	<div class="tweets">
+		<% if @tweets.empty? %>
+		<div class="tweet">
+			<span style="color: #3F993F"> No tweets available</span>
+		</div>
+		<% end %>
+	<% @tweets.each do |t| %>
+	<div class="tweet">
+		<div class="date"><%= time_ago_in_words t.created_at %> ago</div><%= auto_link(t.text) %>
+	</div>
+	<% end %>
+	</div>
+	</div>
+	
+	<div id="badges">
+	<a href="http://www.twitter.com/nlralliance"><img src="http://twitter-badges.s3.amazonaws.com/twitter-b.png" alt="Follow nlralliance on Twitter"/></a>
+	</div>
+	
+	
+	<% if @first_event %>
+	
+	<div id="events">
+		<h2>Upcoming Events</h2>
+		<h3>Please attend if at all possible.</h3>
+	</div>
+	
+	<div id="first_event">
+		<div id="mini-cal"><div class="month"><%= @first_event.start_at.strftime("%b")%></div><div class="day"><%= @first_event.start_at.strftime("%e") %></div></div>
+		<div id="event_description">
+		<a href="<%= url_for event_path(@first_event) %>"><h2><%= @first_event.name %></h2>
+		<h3><%= @first_event.start_at.strftime("%m/%e/%y %l:%M%p")%></h3></a>
+		</div>
+	</div>
+	
+	<% end %>
+
+</div>

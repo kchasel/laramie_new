@@ -1,0 +1,14 @@
+if(slider.open && current == "subscribe") {
+	slider.slideOut();
+}
+else if(slider.open && current != "subscribe") {
+	current = "subscribe";
+	$('donate_form').hide();
+	$('subscribe_status').show();
+}
+else {
+	current = "subscribe";
+	$('donate_form').hide();
+	$('subscribe_status').show();
+	slider.slideIn();
+}

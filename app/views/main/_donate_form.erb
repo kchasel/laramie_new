@@ -1,0 +1,14 @@
+<%= form_tag("https://www.paypal.com/cgi-bin/webscr", {:onsubmit => 'return complete_donation()'}) %>
+	<div id="donate_label"><%= label_tag :custom, "<a href='#{url_for :action => 'donate', :controller => 'main'}'><h2>Donate</h2></a><h3>Every dollar helps to save the Range</h3>".html_safe %></div>
+	<div id="donate_status"><%= text_field_tag :custom, nil, :size => 4, :style => "
+	background: url(/assets/support/dollar.png) 2px center no-repeat white; 
+	padding-left: 14px;" %>
+	<%= image_submit_tag "support/link-arrow-yellow.png", :class => 'submit_image' %>
+	<%= hidden_field_tag :amount %>
+	<%= hidden_field_tag :prefab, "other" %>
+	<h6><%= link_to "Donating FAQs &#187;".html_safe, :action => 'donate', :controller => 'main' %></h6>
+	</div>
+	<input type="hidden" name="cmd" value="_donations">
+	<input type="hidden" name="item_name" value="Donation to NLRA">
+	<input type="hidden" name="business" value="KXBG9FCAVG3S8">
+</form>

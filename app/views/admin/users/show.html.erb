@@ -1,0 +1,49 @@
+<h1><%= link_to "Home", :controller => 'main', :action => 'index' %> >> <%= link_to "Users", :controller => 'users', :action => 'index' %> >> User Options</h1>
+
+<p>
+<h2><%= @account.name %> – <%= @account.email %></h2>
+</p>
+
+<p><h4>User Information</h4></p>
+<div class="info-table">
+	<div class="tr">
+		<div class="td" id="tableheader">Name</div>
+		<div class="td"><%= @account.name %></div>
+	</div>
+	<div class="tr">
+		<div class="td" id="tableheader">E-Mail</div>
+		<div class="td"><%= @account.email %></div>
+	</div>
+	<div class="tr">
+		<div class="td" id="tableheader">Mailing Address</div>
+		<div class="td"><% if not @account.street1.blank? %><%= @account.street1 %><br /><%= @account.street2 %><br /><%= @account.city + ", " + @account.state + " " + @account.zip %><% end %></div>
+	</div>
+	<div class="tr">
+		<div class="td" id="tableheader">E-Mail Listhost</div>
+		<div class="td"><%= @account.receive_news ? "Subscribed #{link_to "Unsubscribe", admin_user_path(@account, :user => { :receive_news => false }), :method => :put}" : "Unsubscribed #{link_to "Subscribe", admin_user_path(@account, :user => { :receive_news => true }), :method => :put}" %></div>
+	</div>
+	<div class="tr">
+		<div class="td" id="tableheader">May Comment</div>
+		<div class="td"><%= @account.no_comments ? "May <b>NOT</b> Comment #{link_to "Permit Commenting", admin_user_path(@account, :user => { :no_comments => false }), :method => :put}" : "May Comment #{link_to "Prohibit Commenting", admin_user_path(@account, :user => { :no_comments => true }), :method => :put}" %></div>
+	</div>
+	<div class="tr">
+		<div class="td" id="tableheader">Verified</div>
+		<div class="td"><%= @account.verified ? "Yes" : "No #{link_to "Verify Now (NOT RECOMMENDED; User can reverify him/herself.", admin_user_path(@account, :user => { :verified => true }), :method => :put}" %></div>
+	</div>
+	<div class="tr">
+		<div class="td" id="tableheader">Member Since</div>
+		<div class="td"><%= @account.created_at.strftime("%c") %></div>
+	</div>
+</div>
+
+<%= button_to "Delete this account", admin_user_path(@account), :method => :delete, :confirm => "Are you sure you wish to permanently delete this account? This action is irreversible!" %>
+
+<div id="comments">
+	<div id="topper">
+		<h2>This User's Comments</h2>
+		<%= link_to "Delete all of this user's comments", { :action => 'delete_all_comments', :id => @account.id }, :confirm => "Are you sure you wish to delete all of this user's comments?" %>
+	</div>
+	<div id="allcomments" <%= "style='display: none'" if @account.comments.blank? %>>
+		<%= render :partial => 'admin/comments/comment', :collection => @account.comments, :spacer_template => 'comments/spacer' %>
+	</div>
+</div>

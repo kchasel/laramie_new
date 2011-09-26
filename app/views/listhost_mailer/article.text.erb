@@ -1,0 +1,21 @@
+Northern Laramie Range Alliance LISTHOST
+
+--------
+
+New News Article Posted:
+
+<%= @article.title %>: <%= @article.summary %>
+
+--------
+
+<%= strip_tags(@article.body) %>
+
+
+
+You may also view this article on our site at <%= url_for article_url(@article, :only_path => false) %>
+
+--------
+
+Visit us online at <%= url_for :action => 'index', :controller => 'main', :only_path => false %>
+
+If you no longer wish to receive e-mails from us, you may unsubscribe by clicking here: <%= url_for :controller => "subscribers", :action => "unsubscribe", :only_path => false %>

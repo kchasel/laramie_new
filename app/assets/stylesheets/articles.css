@@ -1,0 +1,111 @@
+#body h1.date_link {
+	border-bottom: 1px solid #CB8A43;
+	margin-bottom: 5px;
+}
+
+#body #date_finder_track {
+	position: relative;
+	width: 150px;
+	float: right;
+}
+
+#body #date_finder {
+	width: 150px;
+	margin-top: 10px;
+	text-align: right;
+	
+}
+
+#body #date_finder a {
+	font-size: 11px;
+	font-family: Arial, sans-serif;
+	color: #A8A8A8;
+	padding: 2px;
+}
+
+#body #date_finder ul {
+	text-align: left;
+	list-style: none outside none;
+	margin: 0;
+	padding: 0;
+	background-color: #EAFFD6;
+	-webkit-border-radius: 3px !important;
+	-moz-border-radius: 3px !important; border-radius: 3px !important; 
+	-o-border-radius: 3px !important; -khtml-border-radius: 3px !important;
+	overflow: hidden;
+}
+
+#body #date_finder h3 {
+	font-size: 12px;
+	white-space: nowrap;
+}
+
+#body #date_finder ul li a {
+	font-size: 13px;
+	font-family: Arial, sans-serif;
+	color: #769958;
+	display: block;
+	padding: 5px;
+	border-bottom: 1px solid white;
+}
+
+#body #date_finder ul li a:hover {
+	text-decoration: none;
+	background-color: #D8EBC6;
+}
+
+#body #date_finder ul li a:active {
+	text-decoration: none;
+	background-color: #D2E3C0;
+}
+
+#body #date_finder select {
+	font-size: 13px;
+	background-color: #F1FFCE;
+}
+
+
+#body #the_articles #articles_list {
+	margin-right: 160px;
+}
+
+.blogpost {
+}
+
+.blogpost a {
+	display: block;
+	padding: 4px 4px 4px 4px;
+}
+
+.blogpost a:hover {
+	text-decoration: none;
+	background: url(support/link-arrow-large-bg.png) center right no-repeat;
+}
+
+.blogpost .date {
+	float: right;
+}
+
+.blogpost .date h6 {
+	color: #B8B8B8;
+}
+
+.blogpost h2 {
+	font-size: 15px;
+	line-height: 25px;
+	color: #EBB325;
+}
+
+#body .blogpost h3 {
+	font-size: 11px !important;
+	color: #8EADC4 !important;
+}
+
+.blogpost a:hover h2 {
+	text-decoration: none;
+	color: #EBD020;
+}
+
+#body .little-gallery img {
+	padding: 0 40px;
+}

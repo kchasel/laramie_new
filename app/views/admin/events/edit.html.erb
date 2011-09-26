@@ -1,0 +1,2 @@
+<h1><%= link_to "Admin Home", :action => 'index', :controller => 'main' %> &#187; <%= link_to "Events", admin_events_path %> &#187; <%= link_to @event.name, admin_event_path(@event) %> &#187; <%= "Edit #{@event.name}" %>
+<%= render :partial => 'event_form' %>

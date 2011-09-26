@@ -1,0 +1,20 @@
+<% content_for :body_header do %>
+	<%= link_to "NLRA Listhost", :action => 'assistance' %> – Unsubscription
+<% end %>
+
+<% content_for :title do %>
+- Subscriber Assistance
+<% end %>
+
+<h3>To unsubscribe definitively from the NLRA listhost, please enter your e-mail below.</h3>
+
+	<%= form_tag nil, :remote => true do %>
+		<% if flash.notice %>
+		<div id="flash_alert">
+		<%= flash.notice %>
+		</div>
+		<% end %>
+		<div id="subscribe_label"><%= label_tag :email, "<h2>Unsubscription</h2><h3>Enter the e-mail you wish to unsubscribe</h3>".html_safe %></div>
+		<div id="unsubscribe_field"><%= text_field_tag :email, nil, {:size => 22, :placeholder => 'your e-mail'} %>
+		<%= image_submit_tag "support/link-arrow-green.png", :class => 'submit_image' %></div>
+	<% end %>

@@ -1,0 +1,59 @@
+a:visited {
+	color: #5F6E4C;
+}
+
+#body #body-header {
+	background: url(header_bgs/range_3.png) 0px -290px no-repeat;
+}
+
+#body #body-content ul {
+	margin: 0;
+	padding: 0;
+	background-color: #F5FFEE;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px; border-radius: 4px; 
+	-o-border-radius: 4px; -khtml-border-radius: 4px;
+	overflow: hidden;
+}
+
+#downloads_list {
+	margin: 5px 0 0 0;
+}
+
+#body #body-content ul li {
+	padding: 3px 0 0 3px;
+	list-style-type: none;
+	list-style-position: inside;
+	font-size: 10px;
+	font-family: Arial;
+	color: #788099;
+	border-bottom: 1px solid white;
+}
+
+#body #body-content h1 {
+	border-bottom: 1px solid #CB8A43;
+	margin-bottom: 5px;
+	cursor: pointer;
+}
+
+#body #body-content ul li:hover {
+	background: url(support/link-arrow-green.png) 730px center no-repeat #E8FFDD;
+}
+
+#body #body-content ul li:active {
+	background-color: #DAF0D0;
+}
+
+#body #body-content ul li .other {
+	background-color: #F5FFEE;
+}
+
+#body #body-content ul li a {
+	padding: 6px 40px 18px 10px;
+	display: block;
+	font-size: 15px;
+}
+
+#body #body-content ul li a:hover {
+	text-decoration: none;
+}

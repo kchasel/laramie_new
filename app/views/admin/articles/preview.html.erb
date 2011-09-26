@@ -1,0 +1,21 @@
+<h1><%= link_to "Home", :controller => 'main', :action => 'index' %> >> <%= link_to "Articles", admin_articles_path %> >> New article</h1>
+<p><h5>Please preview your article below. If there are problems, hit Back to Edit to continue editing this article's contents. If it looks good, hit Post New Article Now.</h5></p>
+
+<% unless @article.no_mail == "1" %><p><h4>NB: Read your article carefully before posting! All new articles will be immediately delivered to those subscribed to the mailing list!</h4></p><% end %>
+
+<%= render :partial => '/articles/complete_article' %>
+
+<%= form_for @article, :url => admin_articles_path, :html => { :multipart => true } do |f| %>
+
+	<%= f.hidden_field :title %>
+	<%= f.hidden_field :summary %>
+	<%= f.hidden_field :body %>
+	<%= f.hidden_field :nocomments %>
+	<%= f.hidden_field :important %>
+	<%= f.hidden_field :no_mail%>
+	<%= f.file_field :image %>
+
+	<%= f.submit "Post New Article Now" %>
+	<%= f.submit "Back to Edit", :onclick => "this.form.action='#{url_for :action => 'new'}';return true;" %>
+	
+<% end %>

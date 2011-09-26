@@ -1,0 +1,16 @@
+<h1><%= link_to "Home", :controller => 'main', :action => 'index' %> >> <%= link_to "Users", :controller => 'users', :action => 'index' %> >> Add bulk e-mails</h1>
+<p><h5>If you've received some e-mails to add to the mailing list and you'd like to insert them into the database, enter them below in the box.</h5></p>
+
+<p><h4>Please separate the e-mails using commas
+<br />ex: mail@123.com, mail@456.com, mail@789.com
+
+<br />
+<br />NB: Any e-mails that are invalid or would be duplicates if added using this tool will appear at the top of the next screen. Please note them down to correct them and try them again!</h4></p>
+
+<%= form_tag do |f| %>
+
+	<%= text_area_tag :emails, nil, :rows => 20, :cols => 100 %>
+	
+	<br /><%= submit_tag "Insert" %>
+	
+<% end %>

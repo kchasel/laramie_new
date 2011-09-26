@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Disco-885=9-1">
+</head>
+
+<style type="text/css">
+#email-body a {
+	color: #80995D;
+}
+
+#email-body {
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	font-weight: narrow;
+	color: #484848;
+	line-height: 20px;
+	text-align: justify;
+}
+
+#email-body #box {
+	/*width: 700px;*/
+	font-size: 12px;
+	padding: 20px;
+}
+
+#email-body #box #top {
+	height: 40px;
+	position: relative;
+	margin: 0px;
+	
+}
+
+#email-body #box #top #title {
+	position: absolute;
+	line-height: 90px;
+	padding-left: 380px;
+	font-size: 25px;
+	color: #62696E;
+}
+
+#email-body #box #middle {
+	padding: 10px 0px 10px 0px;
+	margin: 0px;
+}
+
+#email-body #box #bottom {
+	padding: 0px;
+	height: 0px;
+	margin: 0px;
+}
+
+#email-body #box .visit {
+	font-family: 'Verdana', 'Helvetica', sans-serif;
+	font-size: 11px;
+	color: #7F7F7F;
+}
+
+#email-body h1 {
+	font-family: 'Myriad Pro', 'Myriad Web', Arial, sans-serif;
+	font-size: 18px;
+	color: #7A8B3F;
+	font-weight: normal;
+}
+
+#email-body h2 {
+	font-family: 'Georgia', serif;
+	font-size: 12px;
+	color: #436380;
+	font-weight: normal;
+	font-style: italic;
+}
+
+#email-body #summary {
+	border-bottom: 1px solid #DEDEDE;
+}
+
+</style>
+
+<body>
+	<div id="email-body">
+	<div id="box" style="font-size: 12px; padding: 20px">
+		<div id="top" style="height: 40px; position: relative; margin: 0px;">
+			<img src="http://www.nlralliance.org/images/mail/logo-gray.png">
+		</div>
+		
+		<div id="middle" style="padding: 10px 0px 10px 0px; margin: 0px">
+			
+			<%= yield %>
+		
+		</div>
+		
+		<div id="bottom" style="padding: 0px; height: 0px; margin: 0px"></div>
+		
+	</div>
+	<div id="copyright" style="text-align: right;
+	color: #969696;
+	font-family: 'Lucida Grande';
+	font-size: 9px;
+	padding-right: 0px;">this e-mail address is unmonitored. <b>do not reply to this e-mail</b>. if you have questions or comments regarding the NLRA, please contact us at info@nlralliance.org. For technical problems, please contact webmaster@nlralliance.com</div>
+	</div>
+</body>
+</html>

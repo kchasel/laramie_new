@@ -1,0 +1,82 @@
+<% content_for :body_header do%>
+	Documents
+<% end %>
+
+<% content_for :extra_css do %>
+	<%= stylesheet_link_tag 'documents' %>
+<% end %>
+
+<% content_for :title do %>
+- Documents
+<% end %>
+
+<h3>Downloads and information regarding our project, its supporters, and its impacts.</h3>
+<h4>Documents are grouped by author and then chronologically. Most documents are in PDF format. Click on an author to view the available documents.</h4>
+
+<script>
+window.addEvent('domready', function(){
+var myAccordian = new Fx.Accordion($$('#downloads_list h1'), $$('.dl_list'), {
+	alwaysHide: true,
+	display: -1
+});	
+});
+</script>
+
+<div id="downloads_list">
+<h1>NLRA</h1>
+<ul class="dl_list" id="nlra_links">
+	<li class='document'>1.20.11 <%= link_to "NLRA Press Release; January 20, 2011".html_safe, "/downloads/NLRAPressRelease1_20_11.pdf" %></li>
+	<li class='document'>1.20.11 <%= link_to "Letter to Legislators (Jim Anderson version)".html_safe, "/downloads/LegisPollLtrAnderson.pdf" %></li>
+	<li class='document'>11.8.10 <%= link_to "Questions for Wasatch Wind Open House/November 9".html_safe, "/downloads/WasatchOpenHseNLRAquestionnaire.pdf" %></li>
+	<li class='document'>11.6.10 <%= link_to "November 2010 NLRA Converse County Poll Mailing Cover Letter".html_safe, "/downloads/mailin_poll/NovNLRApoll.pdf" %></li>
+	<li class='document'>11.6.10 <%= link_to "November 2010 NLRA Converse County Poll Mailing Postcard".html_safe, "/downloads/mailin_poll/NovNLRApollCard.pdf" %></li>
+	<li class='document'>8.16.10 <%= link_to "Northern Laramie Range Political Action Committee Statement of Purpose".html_safe, "/downloads/pac_sop.pdf" %></li>
+	<li class='document'>8.16.10 <%= link_to "Northern Laramie Range Political Action Committee Donation Envelope".html_safe, "/downloads/pac_envelope.pdf" %></li>
+	<li class='document'>4.21.10 <%= link_to "Letter to the Game & Fish Commissioners".html_safe, "/downloads/gf_commissioners_04_21_10.pdf" %></li>
+	<li class='document'>3.21.10 <%= link_to "NLRA Editorial in the Douglas Budget".html_safe, "/downloads/db_editorial_3-2010.pdf"%></li>
+	<li class='document'>2.10.10 <%= link_to "Letter to Wasatch CEO Tracy Livingston".html_safe, "/downloads/wasatch_letter_feb_10.pdf"%></li>
+	<li class='document'>1.12.10 <%= link_to "January 19 Meeting Flyer".html_safe, "/downloads/Jan19NoticeDraft2.pdf"%></li>
+	<li class='document'>10.23.09 <%= link_to "NLRA statement regarding the three-month freeze on industrial development recommended by the Converse County Planning and Zoning Commission".html_safe, "/downloads/zoning_10-23-09.pdf"%></li>
+	<li class='document'>10.9.09 <%= link_to "Northern Laramie Range Alliance Forms Foundation to Pursue Conservation and Education".html_safe, "/downloads/nlrf_pressrelease.pdf"%></li>
+	<li class='document'>8.26.09 <%= link_to "Discussion Note: Industrial-Scale Wind Development and the Property-rights Dilemma".html_safe, "/downloads/WindTaskForceDiscNoteFnl.pdf"%></li>
+	<li class='document'>8.26.09 <%= link_to "NLRA Remarks to the Legislative Task Force on Wind Energy".html_safe, "/downloads/KGLrmksoutline.pdf"%></li>
+	<li class='document'>8.26.09 <%= link_to "NLRA Presentation to the Legislative Task Force on Wind Energy".html_safe, "/downloads/WyoTaskForcePwrPt.pdf"%></li>
+	<li class='document'>7.21.09 <%= link_to "Letter to Mr. Richard Walje confirming Rocky Mountain Power's decision to not pursue new transmission corridors through the Northern Laramie Range".html_safe, "/downloads/WaljeFollowup7-21-09.pdf"%></li>
+	<li class='photo'>7.1.09 <%= link_to 'Gateway West Corridor with Alternate Routes of the 1E Segment'.html_safe, '/downloads/gw_1e_07-1-09.jpg'%></li>
+	<li class='document'>6.27.09 <%= link_to 'Letter to Albany County Commissioners'.html_safe, '/downloads/albany_06-27-09.pdf'%></li>
+	<li class='document'>6.26.09 <%= link_to 'Invitation to July 9 Public Meeting'.html_safe, '/downloads/invite_insert_06-26-09.pdf'%></li>
+	<li class='document'>6.23.09 <%= link_to 'Letter to Heads of Edison International'.html_safe, '/downloads/edison_06-23-09.pdf'%></li>
+	<li class='document'>6.22.09 <%= link_to 'Letter to Wyoming Senators and Representatives'.html_safe, '/downloads/st_leg_6-22-09.pdf'%></li>
+	<li class='document'>5.16.09 <%= link_to "NLRA letter to U.S. Bureau of Land Management  covering 205 petitions against Segment 1E".html_safe, '/downloads/SimpsonPetitionsCvrLtr5.16.09.pdf' %></li>
+	<li class='document'>5.13.09 <%= link_to 'NLRA letter to Wyoming Office of State Lands & Investments concerning Wasatch Wind "special Use" applications'.html_safe, '/downloads/BoomgaardenLtr05.13.09.pdf' %></li>
+</ul>
+<h1>Clarion Associates (Contracted by the Converse County Government)</h1>
+<ul class="dl_list" id="clarion_links">
+	<li class='document'>Received 7.20.10 <%= link_to "Converse County/Clarion Wind Energy Questionnaire Results".html_safe, "/downloads/SurveySummary_AllSurveys.pdf"%></li>
+	<li class='document'>Received 7.20.10 <%= link_to "Questionnaire Question 5 Responses".html_safe, "/downloads/SurveySummary_TypedAnswers_Question5.pdf"%></li>
+	<li class='document'>Received 7.20.10 <%= link_to "Questionnaire Question 6 Responses".html_safe, "/downloads/SurveySummary_TypedAnswers_Question6.pdf"%></li>
+	<li class='document'>Received 7.20.10 <%= link_to "Questionnaire Question 10 Responses".html_safe, "/downloads/SurveySummary_TypedAnswers_Question10.pdf"%></li>
+	<li class='document'>Received 7.20.10 <%= link_to "Questionnaire Question 11 Responses".html_safe, "/downloads/SurveySummary_TypedAnswers_Question11.pdf"%></li>
+	<li class='document'>Received 7.20.10 <%= link_to "Questionnaire Question 13 Responses".html_safe, "/downloads/SurveySummary_TypedAnswers_Question13.pdf"%></li>
+</ul>
+<h1>Wyoming State Government</h1>
+<ul class="dl_list" id="wyo_state_links">
+	<li class='document'>12.10.09 <%= link_to "Report to the Legislative Task Force on Wind Energy Transmission Sub-Committee".html_safe, "/downloads/TaskForceTransmission.pdf"%></li>
+	<li class='document'>6.2009 <%= link_to "Environmental Assessment for the Gateway West Geotechnical Drilling Project".html_safe, "/downloads/EnvAssessmentTestDrilling.pdf" %></li>
+	<li class='document'>5.13.09 <%= link_to 'Wyoming Office of State Lands & Investment reply to NLRA letter of 5.16.09'.html_safe, '/downloads/BoomgaardenResponse05.18.09.pdf'%></li>
+</ul>
+<h1>Rocky Mountain Power</h1>
+<ul class="dl_list" id="rocky_mnt_links">
+	<li class='document'>2.23.10 <%= link_to "Rocky Mountain Power 'Avoided Cost' Filing with the Wyo Public Service Commission".html_safe, "/downloads/RMPwyoPURPApricing.pdf"%></li>
+	<li class='photo'>8.25.08 <%= link_to 'Segment 1E (proposed) detailed route maps'.html_safe, '/downloads/1EPrpsdRteMaps08.25.08.pdf' %></li>
+</ul>
+<h1>Wasatch Wind</h1>
+<ul class="dl_list" id="wasatch_links">
+	<li class='document'>7.2010 <%= link_to 'Wasatch Wind State Lands Application'.html_safe, '/downloads/wasatch_app.pdf' %></li>
+	<li class='document'>7.13.10 <%= link_to 'Wasatch Announcement of Power Purchase Agreements with Rocky Mountain Power'.html_safe, '/downloads/WasatchRelease7.13.2010.jpg' %></li>
+	<li class='document'>3.26.09 <%= link_to 'Wasatch Wind "Base Lease" <i>pro forma</i> agreement'.html_safe, '/downloads/WasatchWindWyoBase LeaseProForma03.26.09.pdf' %></li>
+	<li class='document'>2.13.09 <%= link_to 'Wasatch Wind applications for "special use" of State land / 1'.html_safe, '/downloads/SE2_SE3_applications.pdf' %></li>
+	<li class='document'>2.13.09 <%= link_to 'Wasatch Wind applications for "special use" of State land / 2'.html_safe, '/downloads/SE4_SE5_applications.pdf' %></li>
+	<li class='photo'>2.13.09 <%= link_to 'Wasatch Wind map of areas of interest and State lands applied for'.html_safe, '/downloads/WasatchLeaseMap.pdf' %></li>
+</ul>
+</div>

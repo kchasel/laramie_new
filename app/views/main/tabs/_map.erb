@@ -1,0 +1,22 @@
+
+<script type="text/javascript">
+	width = $('range-info').getElement('div.body').getStyle('width');
+	$('map').setStyle(width);
+	
+	function mapsLoaded() {
+		var map = new google.maps.Map2(document.getElementById("map"));
+		map.addMapType(G_PHYSICAL_MAP);
+		map.addControl(new google.maps.SmallZoomControl());
+		map.addControl(new google.maps.ScaleControl)
+		map.addControl(new google.maps.MapTypeControl)
+		map.setCenter(new google.maps.LatLng(42.622128, -105.793097), 10);
+		map.setMapType(G_PHYSICAL_MAP);
+		
+	}
+	google.load("maps", "2",{"callback": mapsLoaded, "other_params":"sensor=false"});
+	
+</script>
+<div>
+	<div id="map" style="height: 500px"></div>
+	<div style="display: inline; top: 280px; position: absolute; left: 50%; z-index: -1"><h2 style="color: #74994E">Map loading...</h2></div>
+</div>

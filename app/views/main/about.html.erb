@@ -1,0 +1,58 @@
+<% content_for :extra_css do %>
+<%= stylesheet_link_tag 'tabbed' %>
+
+<% end %>
+
+<% content_for :extra_js do %>
+<%= javascript_include_tag 'tabbed' %>
+<% end %>
+
+<% content_for :title do %>
+- About the Northern Laramie Range
+<% end %>
+
+<script>
+	
+	/*window.addEvent('domready', function(){
+		var tabs = new Tabber(
+			{
+			box: $(document.body).getElement('div.tabbed-box'),
+			//tabholderclass: 'tabs',
+			bodyclass: 'body',
+			url: '/main/info_link',
+			urlparam: 'sec',
+			selectedclass: 'selected',
+			hometab: 'home'
+			},
+			{
+				durationtabsslide: 450,
+				durationchange: 400
+			}
+		);
+	});*/
+	
+	window.addEvent('domready', function() {
+		tabbox_setup();
+	});
+	
+</script>
+
+<div class="tabbed-box" id="range-info">
+	<div class="tabs">
+		
+		<ul id="ul">
+			<li><%= link_to_function "NLRA", "tb_update(this, 'nlra'); return false"%></li>
+			<li><%= link_to_function "Wasatch Wind", "tb_update(this, 'wasatch_wind');return false"%></li>
+			<li><%= link_to_function "The Range", "tb_update(this, 'the_range'); return false"%></li>
+			<li><%= link_to_function "Links &amp; Contacts".html_safe, "tb_update(this, 'links_and_contacts'); return false" %></li>
+			<li><%= link_to_function "Map", "tb_update(this, 'new_map'); return false"%></li>
+		</ul>
+	</div>
+	
+	
+	
+	<div class="body" id="range-body"><div id="range-info-body">
+		<%= render 'main/tabs/home' %>
+	</div></div>
+		
+</div>

@@ -1,0 +1,55 @@
+<h1><%= link_to "Home", :controller => 'main', :action => 'index' %> >> Send an e-mail to the listhost</h1>
+
+<p><h3>Message Preview</h3></p>
+
+<p><h4 style="color: #994F2B">NB: Please read your e-mail carefully before sending! You cannot "unsend" your e-mail!</h4></p>
+
+<p><h4>From: <%= Laramie::CONFIG[:steering_email] %>
+	<br />Subject: [NLRA] <%= @message.subject %></h4></p>
+	<div id="email-body">
+	<div id="box" style="font-size: 12px; padding: 20px">
+		<div id="top" style="height: 40px; position: relative; margin: 0px;">
+			<img src="http://www.nlralliance.org/images/mail/logo-gray.png">
+		</div>
+		
+		<div id="middle" style="padding: 10px 0px 10px 0px; margin: 0px">
+			
+			<div id="summary" style="border-bottom: 1px solid #DEDEDE">
+			<h1 style="font-family: 'Verdana', 'Helvetica', sans-serif;
+				font-size: 18px;
+				text-transform: uppercase;
+				color: #505B40;
+				font-weight: normal;"><%= @message.subject %></h1>
+			</div>
+
+			<%= auto_link(simple_format(@message.body)) %>
+		
+			<p><span class="visit" style="font-family: 'Verdana', 'Helvetica', sans-serif; font-size: 11px; color: #7F7F7F">Visit us online at <%= link_to nil, :action => 'index', :controller => '/main', :only_path => false %></span></p>
+		
+		</div>
+		
+		<div id="bottom" style="padding: 0px; height: 0px; margin: 0px"></div>
+		
+	</div>
+	<div id="copyright" style="text-align: right;
+	color: #B2B2B2;
+	font-family: 'Lucida Grande';
+	font-size: 9px;
+	padding-right: 0px;
+	line-height: 25px;
+	height: 25px;"><img src="http://www.nlralliance.org/images/mail/logo-gray-sm.png" style="float: left">if you no longer wish to receive e-mails from us, you may <%= link_to "unsubscribe at any time", :controller => "/subscribers", :action => "unsubscribe", :only_path => false %></div>
+	</div>
+
+<%= form_for @message, :as => :message, :url => { :action => "send_listhost_message" }, :html => { :multipart => true } do |f| %>
+	<%= f.hidden_field :subject %>
+	<%= f.hidden_field :body %>
+	<br />
+	<%= f.label :attachment, "<h3>Add attachments</h3>".html_safe %>
+	<h4>If you have attachments to add, you may choose them here. PDF format is highly recommended. Be sure your file has an extension. If you would like to add multiple extensions, click Add another attachment to create another attachment field.</h4>
+	<h4 style="color: #994F2B">Please be patient! Uploaded the attachments may take some time. <b>DO NOT CLOSE OR NAVIGATE AWAY FROM THIS WINDOW AFTER CLICKING SEND!</b></h4>
+	<p><input id="message_attachments" name="message[attachments][]" type="file" /> 
+	<%= button_to_function "Add another attachment", "new_attachment_field().inject(this, 'before')" %>
+	</p>
+	<%= f.submit "Send your message now" %>
+	<%= f.submit "Back to edit", :onclick => "this.form.action='#{url_for :action => 'listhost_mail'}';return true;" %>
+<% end %>

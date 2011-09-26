@@ -1,0 +1,44 @@
+<h1><%= link_to "Home", :controller => 'main', :action => 'index' %> >> Users</h1>
+
+<% if @bad_emails %>
+<h2>ATTENTION</h2>
+The following e-mails were not added (they were invalid or they are already in the system):
+<ul>
+	<% @bad_emails.each do |e| %>
+	<li><%= e %></li>
+	<% end %>
+</ul>
+<% end %>
+<p><h5>This is a list of all users currently registered in the system, both full account holders as well as subscribers to the listhost. Accounts may post comments on the site and may have a mailing address associated with them. Subscribers simply receive mailings from the listhost.</h5>
+</p>
+
+<p><h4>The listhost currently has <%= @listhost_count %> subscribers</h4></p>
+
+<div id="tasks_list">
+	<ul>
+		<li><%= link_to "Subscribe a batch of e-mails to the listhost", bulk_emails_admin_users_path %></li>
+	</ul>
+</div>
+
+<p>
+<h2 style="color: #99392A">Important note: As of version 5.0 of the NLRA site, accounts have been deactivated. Previously created accounts are no longer accessible by the user, and now appear to them simply as a subscription to the NLRA listhost. This list is maintained here for legacy support only.</h2>
+<h2>Full Accounts (<%= @accounts.length %> total, <%= @listhost_count - @subscribers.length %> subscribed to listhost)</h2>
+<h5>Click on a name to access that account's options.</h5></p>
+<p>
+	<div class="table">
+	<div class="tr" id="tableheader"><div class="td">Name</div><div class="td">E-mail</div><div class="td">On Mailing List?</div></div>
+	<%= render :partial => 'account', :collection => @accounts %>
+	</div>
+</p>
+<p><h2>Listhost-only Subscribers (<%= @subscribers.length %> subscribed to listhost)</h2>
+	<h5>To remove a subscriber, click the Remove link to the right of his or her name. To remove multiple subscribers at once, click on the checkbox next to the e-mails, then click the button at the bottom of the list.</h5>
+</p>
+<p>
+	<%= form_tag({:action => "delete_multiple" }) do %>
+	<div class="table">
+	<div class="tr" id="tableheader"><div class="td"></div><div class="td">E-Mail</div><div class="td">Remove</div></div>
+	<%= render :partial => 'subscriber', :collection => @subscribers %>
+	</div>
+	<br /><%= submit_tag "Delete Selected Users",:confirm => "You're sure you wish to delete all these subscribers?" %>
+	<% end %>
+</p>

@@ -1,0 +1,37 @@
+<div id="announcement">
+	
+	<h1>April 11 Commissioner's Hearing</h1>
+	<h3>Important decision-making meeting coming up!</h3>
+	<p>On April 11, the Converse Country Commissioners will hold a very important meeting to discuss the prospect of allowing Wasatch Wind to proceed with its construction of wind turbines in the Northern Laramie Range. 
+		<br /><b>We ask all our members, if possible, to attend and make their voices heard!</b></p>
+<h3><%= link_to "More information &#187;".html_safe, event_path(1) %></h3>
+</div>
+<div id="subarticles">
+	<% if @articles[0] %>
+	<div class="article">
+		<a href="<%= url_for article_path(@articles[0]) %>">
+		<h1><%= @articles[0].title %></h1>
+		<p><%= @articles[0].summary %> &#187;</p>
+		</a>
+	</div>
+	<% end %>
+	<% if @articles[1] %>
+	<div class="article">
+		<a href="<%= url_for article_path(@articles[1]) %>">
+		<h1><%= @articles[1].title %></h1>
+		<p><%= @articles[1].summary%> &#187;</p>
+		</a>
+	</div>
+	<% end %>
+	<% if @articles[2] %>
+	<div class="article">
+		<a href="<%= url_for article_path(@articles[2]) %>">
+		<h1><%= @articles[2].title %></h1>
+		<p><%= @articles[2].summary%> &#187;</p>
+		</a>
+	</div>
+	<% end %>
+</div>
+<div id="more_link">
+	<%= link_to "<h3>Older articles</h3>".html_safe, articles_path %>
+</div>

@@ -1,0 +1,1 @@
+<li><%= link_to article.title, admin_article_path(article) %> – Added <%= article.created_at.strftime("%A %m/%d/%Y at %I:%M%p")%> <%= link_to "Delete", admin_article_path(article), :method => :delete %></li>

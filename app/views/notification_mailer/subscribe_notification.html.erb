@@ -1,0 +1,21 @@
+<div id="summary">
+<h1 style="font-family: 'Myriad Pro', 'Myriad Web', Arial, sans-serif;
+	font-size: 18px;
+	color: #505B40;
+	font-weight: normal">Listhost Subscription</h1>
+</div>
+
+<p>Hello <%= @user.email %>,
+<br />
+<br />Welcome to the Northern Laramie Range Alliance's e-mail listhost! From now on, whenever news is made, you'll be among the first to hear about it.
+
+<br />
+<br />Thanks for subscribing!
+
+<br />
+<br />The staff of NLRA
+
+</p>
+
+<p><span class="visit" style="font-family: 'Verdana', 'Helvetica', sans-serif; font-size: 11px; color: #7F7F7F">You have received this e-mail because you are subscribed to the NLRA Listhost.<br />If you no longer wish to receive e-mail from us, you may <%= link_to "unsubscribe at any time", :controller => "subscribers", :action => "unsubscribe", :only_path => false %>.
+	<br /><br />Visit us online at <%= link_to nil, :action => 'index', :controller => 'main', :only_path => false %></span></p>

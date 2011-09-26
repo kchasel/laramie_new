@@ -1,0 +1,25 @@
+<h1><%= link_to "Admin Home", :action => 'index', :controller => 'main' %> &#187; <%= link_to "Events", admin_events_path %> &#187; Create a new event</h1>
+
+<p><h4>Instructions</h4>
+	
+	<ol>
+		<li>Enter the article information in the fields below. All information is required.
+			<br /><br /><i>Important tips
+				<ul style="list-style: disc inside none">
+					<li>All times and dates are in the current local time in Casper, WY (MDT or MST).</li>
+					<li>All URLs, links, and e-mail addresses will automatically be turned into clickable links on the website</li>
+					<li>Paragraph breaks and extra spaces will NOT be respected</li>
+					<li>For extra formatting, use HTML. For example, use &lt;b&gt;...&lt;&#47;b&gt; for bold text and &lt;i&gt;...&lt;&#47;i&gt; for italicized text</li>
+				</ul></i>
+		</li>
+		<li>A notification about the event will be delivered <b>immediately upon submission</b> to the listhost. Please review your event carefully before posting.
+			<br /><br /><i>Tips regarding the listhost
+				<ul style="list-style: disc inside none">
+					<li>E-mails will be sent immediately and the operation cannot be canceled</li>
+				</ul></i>
+		</li>
+		<li>To edit or delete and article after it has been posted, return to the admin site. <b>If you make a change to an existing event, be careful, as a new e-mail will be delivered to the listhost to warn subscribers of the change!</b></li>
+	</ol>
+</p>
+
+<%= render :partial => 'event_form' %>

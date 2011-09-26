@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one_test:
+  title: A Test Article
+  summary: This is a test article for the NLRA
+  body: BLAH BLAH BLAH
+  id: 1
+
+two_test:
+  title: MIssing a summary!
+  summary: This article will be missing a summary!
+  body: BLAH BLAH
+  id: 2

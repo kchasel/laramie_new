@@ -1,0 +1,53 @@
+
+<script type="text/javascript">
+	
+	function position_loupe(top_dep, left_dep, top_pos, left_pos) {
+		$('loupe').setStyles({
+			'top': top_dep,
+			'left': left_dep,
+			'background-position': [-left_pos, -top_pos],
+			'cursor' : 'none'
+		})
+	}
+	
+	window.addEvent('domready', function() {
+		
+	  	map_pos = $('map').getPosition();
+	  	size = $('loupe').getSize();
+	
+		loupe_fade = new Fx.Tween('loupe', {duration: 200, link: 'cancel'});
+	
+		loupe_fade.start('opacity', 0);
+		
+		$('map').addEvent('mouseenter', function() {
+			loupe_fade.start('opacity', 1);
+		});
+		
+		$('map').addEvent('mouseleave', function() {
+			loupe_fade.start('opacity', 0)
+		});
+	
+		$('map').addEvent('mousemove', function(event) {
+			move_event = this;
+			window.cursor = 'hidden'
+			var mouse_top = event.page.y-map_pos.y;
+			var mouse_left = event.page.x-map_pos.x;
+				var top_dep = mouse_top-size.y/2;
+				var left_dep = mouse_left-size.x/2;
+				var top_pos = (mouse_top)*2.1-size.y/2;
+				var left_pos = (mouse_left)*2.1-size.x/2;
+				position_loupe(top_dep, left_dep, top_pos, left_pos)
+		})
+		
+		$('map').addEvent('click', function() {
+			
+		})
+	})
+	
+</script>
+<div style="height: 1350px">
+	<div id="map" style="height: 1079px; background: url(/assets/maps/siteplan_sm_top.png) top left no-repeat; position: relative; overflow: hidden">
+		<div id="loupe" style="width: 300px; height: 300px; z-index: 500; position: absolute; top: 250px; left: 250px; border: 3px solid white; border-radius: 150px; box-shadow: 0 3px 5px #999; background: url(/assets/maps/siteplan.jpg) top left no-repeat white"></div>
+	</div>
+	<div id="legend" style="height: 223px; z-index: 1000; background: url(/assets/maps/siteplan_sm_legend.png) top left no-repeat"></div>
+</div>

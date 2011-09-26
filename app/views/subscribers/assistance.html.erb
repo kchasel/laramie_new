@@ -1,0 +1,44 @@
+<% content_for :body_header do %>
+	NLRA Listhost
+<% end %>
+
+<% content_for :extra_css do %>
+<%= stylesheet_link_tag 'subscribe' %>
+<% end %>
+
+<% content_for :title do %>
+- Subscriber Assistance
+<% end %>
+
+<h3>Subscribing to the NLRA listhost will keep you apprised of all the latest developments and news.</h3>
+
+<%= form_tag({ :action => 'create', :controller => 'subscribers' }, :remote => true, :id => "subscribe_form") %>
+<% if flash.notice %>
+<div id="flash_alert">
+<%= flash.notice %>
+</div>
+<% end %>
+<script>
+	window.addEvent('domready', function() {
+		mask = new Spinner($$('form').getLast().id, {fxOptions: {duration: 200}});
+	});
+</script>
+<div id="subscribe_label"><%= label :subscriber, :email, '<h2>Latest News</h2><h3>Subscribe to our e-mail listhost</h3>'.html_safe %></div>
+<div id="subscribe_status">
+	<%= text_field :subscriber, :email, {:size => 22, :placeholder => 'your e-mail', :style => "
+	font-size: 13px;"} %><%= image_submit_tag "support/link-arrow-green.png", :class => 'submit_image' %>
+</div>
+<div id="unsubscribe_link"><%= link_to "Click to unsubscribe", { :action => 'unsubscribe' } %></div>
+</form>
+
+
+<h1>Questions about the Listhost</h1>
+
+<h2 id="sorts">What sorts of messages will I receive from the NLRA listhost?</h2>
+<p>The NLRA listhost is used to communicate important messages and information to all those interested in protecting the Northern Laramie Range from industrialization. The full content of all articles and publications posted to our website are immediately delivered to the listhost. In addition, messages are occasionally sent to alert members of urgent updates or information.</p>
+
+<h2 id="sharing">Who will the NLRA share my e-mail address with?</h2>
+<p>No one. Ever. Your e-mail will be used only by the NLRA to send you updates through the listhost. Furthermore, should you choose to unsubscribe, your e-mail will instantly be deleted from our servers and online database.</p>
+
+<h2 id="talk">I believe I misentered my e-mail when signing up. What should I do?</h2>
+<p>All signups are confirmed via e-mail. If after 5 minutes you haven't yet received a welcome e-mail in your e-mail inbox, please try again.</p>

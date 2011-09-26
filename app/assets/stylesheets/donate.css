@@ -1,0 +1,68 @@
+#body #body-header {
+	background: url(header_bgs/range_2.png) 0px -190px no-repeat;
+}
+
+#prefab {
+	font-size: 14px;
+}
+
+#body #body-content form input[type=text], #body form select {
+	margin: 3px 3px 3px 140px;
+}
+
+#body #body-content ul {
+	margin: 0;
+	padding: 0;
+	background-color: #F5FFEE;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px; border-radius: 4px; 
+	-o-border-radius: 4px; -khtml-border-radius: 4px;
+	overflow: hidden;
+}
+
+#body #body-content ul li {
+	padding: 3px 0 0 3px;
+	list-style-type: none;
+	list-style-position: inside;
+	font-size: 10px;
+	font-family: Arial;
+	color: #788099;
+	border-bottom: 1px solid white;
+}
+
+#body #body-content h1 {
+	border-bottom: 1px solid #CB8A43;
+	margin-bottom: 5px;
+}
+
+#body #body-content ul li:hover {
+	background: url(support/link-arrow-green.png) 940px center no-repeat #E8FFDD;
+}
+
+#body #body-content ul li:active {
+	background-color: #DAF0D0;
+}
+
+#body #body-content ul li .other {
+	background-color: #F5FFEE;
+}
+
+#body #body-content ul li a {
+	padding: 9px 40px 9px 10px;
+	display: block;
+	font-size: 15px;
+}
+
+#body #body-content ul li a:hover {
+	text-decoration: none;
+}
+
+#body #body-content form #paypal {
+	background: url(paypal.png) center right no-repeat;
+	font-size: 11px;
+	color: #6C7C41;
+	min-height: 20px;
+	padding-top: 7px;
+	text-align: right;
+	padding-right: 75px;
+}

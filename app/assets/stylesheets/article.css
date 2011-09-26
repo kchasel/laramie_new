@@ -1,0 +1,106 @@
+#body {
+	background: url(paper/middle.png) repeat-y;
+	position: relative;
+	margin: 20px auto 10px auto;
+	padding: 30px 60px 0px 60px;
+	width: 930px;
+	margin-bottom: 0px;
+	z-index: 2;
+	/* Undo rounded box settings for body */
+	-webkit-border-radius: none;
+	-moz-border-radius: none; border-radius: none; 
+	-o-border-radius: none; -khtml-border-radius: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+#body #body-header {
+	display: none;
+}
+
+#body #body-content {
+	margin: 0;
+}
+
+#page_top {
+	background: url(paper/top.png) no-repeat;
+	position: absolute;
+	z-index: -1;
+	top: 0px;
+	left: 0px;
+	height: 98px;
+	width: 100%;
+}
+
+#page_middle {
+
+}
+
+#page_bottom {
+	width: 1050px;
+	margin: 0 auto;
+	background: url(paper/bottom.png) no-repeat;
+	height: 97px;
+	margin-bottom: 20px;
+}
+
+#body h1 {
+	color: #60401D;
+}
+
+#body h2 a {
+	font-family: inherit;
+	color: #5F6E4C;
+}
+
+#body h2 {
+	font-family: Georgia, serif;
+	font-style: italic;
+	font-size: 14px;
+}
+
+#body h6 {
+	font-family: 'Helvetica', sans-serif;
+	color: #5B5B5B;
+	padding: 3px;
+}
+
+#body .date {
+	float: right;
+	clear: both;
+	color: #999;
+}
+
+#body p, #body ul li, #body ol li {
+	font-family: Arial;
+	color: #494949;
+	line-height: 25px;
+	font-size: 12px;
+}
+
+#body ul, #body ol {
+	margin: 0;
+	padding: 0 0 0 15px;
+	list-style-position: outside;
+}
+
+#body ul li, #body ol li {
+	padding-left: 5px;
+}
+
+#body-text {
+	overflow: hidden;
+}
+
+#body-text .photo {
+	float: right;
+	padding: 8px 0 8px 8px;
+	margin: 5px 0 5px 15px;
+	max-width: 300px;
+}
+
+img {
+	border: none;
+	margin: 0 auto;
+}

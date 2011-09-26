@@ -1,0 +1,28 @@
+Northern Laramie Range Alliance LISTHOST
+
+--------
+
+New event added to the NLRA Calendar:
+
+<%= @event.name %>
+
+Time
+Starts on <%= @event.start_at.strftime("%B %e at %l:%M%p") %>
+Ends <%= @event.start_at.strftime("%l:%M%p") %>
+
+Address
+<%= @event.address %>
+
+--------
+
+<%= strip_tags(@event.description) %>
+
+
+
+You may download this event to your personal calendar at <%= url_for :action => 'download', :controller => 'events', :id => @event.id, :only_path => false %>
+
+--------
+
+Visit us online at <%= url_for :action => 'index', :controller => 'main', :only_path => false %>
+
+If you no longer wish to receive e-mails from us, you may unsubscribe by clicking here: <%= url_for :controller => "subscribers", :action => "unsubscribe", :only_path => false %>

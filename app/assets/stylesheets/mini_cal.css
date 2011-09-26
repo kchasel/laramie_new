@@ -1,0 +1,38 @@
+.calendar {
+	font-family: lucida grande, sans-serif;
+	margin: 0 auto;
+}
+
+.day_names abbr {
+	font-weight: normal;
+	font-size: 11px;
+}
+
+
+
+.day {
+	font-size: 10px;
+	color: #335231;
+}
+
+.day.otherMonth {
+	color: #6D876B;
+}
+
+.day.dayWithEvents {
+	font-weight: bold;
+}
+
+.day.dayWithEvents a, .day.dayWithEvents a:visited {
+	color: #854C57;
+}
+
+.day.today {
+	color: #EBB325;
+}
+
+.current {
+	font-weight: normal;
+	color: #1E391F;
+	font-size: 12px;
+}

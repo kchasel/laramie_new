@@ -1,0 +1,17 @@
+<!-- Probably move the stylesheet to you layout. Also make sure you include the javascript. -->
+<% content_for :extra_css do %>
+	<%= stylesheet_link_tag "event_calendar" %>
+<% end %>
+<% content_for :extra_js do %>
+<%= javascript_include_tag 'event_calendar'%>
+<% end %>
+
+<% content_for :body_header do %>
+	NLRA Calendar
+<% end %>
+
+<% content_for :title do %>
+- NLRA Calendar
+<% end %>
+
+<%= event_calendar.html_safe %>

@@ -1,0 +1,16 @@
+<div style="background-color: #FFF; border: 1px solid #ECEAE7; width: 400px; height: 400px; -webkit-box-shadow: 0px 1px 3px #E8E6E4; overflow: hidden">
+	
+	<div style="background-color: #FFE0B2; height: 80px; border-bottom: 1px solid #FFDB00">
+		<div style="font-family: 'Georgia'; float: right; display: inline; font-size: 45px; text-align: center; padding: 0 10px 0 0; text-shadow: 0px -1px 1px #FFF"><%= @event.start_at.strftime("%d") %><br /><span style="font-size: 18px"><%= @event.start_at.strftime("%B") %></span>
+		</div>
+		<div style="font-size: 25px; color: #465E99; line-height: 40px; height: 80px; padding-left: 10px"><%= @event.name %></div>
+	</div>
+	
+	<div style="color: #465E99; font-weight: normal; font-size: 16px; font-family: 'Marker Felt', 'Comic Sans MS'; padding: 20px 0 0 30px"><%= @event.start_at.strftime("%l:%M%p")%> &#187; <%= @event.end_at.strftime("%l:%M%p")%>: <%= @event.address%></div>
+	
+	<div style="height: 160px; overflow: auto; padding: 20px; font-family: 'Lucida Grande', sans-serif; letter-spacing: 1px"><%= auto_link(@event.description) %></div>
+	
+	<div style="text-align: right; padding: 20px; font-family: 'Lucida Grande', sans-serif; line-height: 20px"><%= link_to "Add this event to your personal calendar #{image_tag("#{Laramie::CONFIG[:complete_url]}/images/support/download.png", :style => 'vertical-align: middle')}".html_safe, { :action => 'download', :controller => 'events', :id => @event.id, :only_path => false }, :style => "text-decoration: none; color: #465E99" %>
+	</div>
+
+</div>

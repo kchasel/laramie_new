@@ -1,0 +1,25 @@
+GOING LIVE -------------//
+
+0) Update Gemfile to reflect Ruby server to be used on remote host (thin, mongrel, unicorn, etc)
+
+1) Copy entire app to web server (including Gemfile and Gemfile.lock)
+
+2) Update database.yml
+
+3) Migrate database if necessary
+
+4) Run "bundle install --deployment"
+
+5) Modify image URLs in CSS files to match website URL (if necessary) & update Google Maps key
+
+6) Implement cron jobs:
+	a) ar_sendmail -o: check every 5 minutes
+	b) rake download_tweets
+	c) Server restart every 20 mins (?)
+	d) delayed_job task running?
+
+7) Test e-mail sending using Console
+
+8) Move public_html and start server
+
+9) Send e-mail to account holders to inform of changes

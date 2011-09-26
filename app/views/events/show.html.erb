@@ -1,0 +1,21 @@
+<% content_for :body_header do %>
+<%= link_to "NLRA Calendar", calendar_url(:month => @event.start_at.month) %>
+<% end %>
+<div style="width: 722px">
+	
+<div style="height: 400px; width: 160px; float: left">
+	<div style="height: 280px; margin-top: 60px; border: 1px solid #EBE9E7; border-right: none; background-color: #FEFDFD">
+		<div style="height: 60px; background-color: #EAEAEA"></div>
+	</div>
+</div>
+
+<div style="height: 400px; width: 160px; float: right">
+	<div style="height: 280px; margin-top: 60px; border: 1px solid #EBE9E7; border-left: none; background-color: #FEFDFD">
+		<div style="height: 60px; background-color: #EAEAEA; text-align: right; color: #C2C2C2; font-size: 30px; padding-right: 5px; font-family: 'Georgia'; "><%= @event.start_at.tomorrow.strftime("%d") %><span style="font-size: 15px"><br /><%= @event.start_at.tomorrow.strftime("%B") %></span>
+		</div>
+	</div>
+</div>
+
+<%= render :partial => 'event_display'%>
+
+</div>

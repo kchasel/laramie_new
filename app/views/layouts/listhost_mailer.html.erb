@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Northern Laramie Range Alliance</title>
+	<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Disco-885=9-1">
+</head>
+
+<style type="text/css">
+#email-body a {
+	color: #80995D;
+}
+
+#email-body {
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	font-weight: narrow;
+	color: #484848;
+	line-height: 20px;
+	text-align: justify;
+}
+
+#email-body #box {
+	/*width: 700px;*/
+	font-size: 12px;
+	padding: 20px;
+}
+
+#email-body #box #top {
+	height: 40px;
+	position: relative;
+	margin: 0px;
+	
+}
+
+#email-body #box #top #title {
+	position: absolute;
+	line-height: 90px;
+	padding-left: 380px;
+	font-size: 25px;
+	color: #62696E;
+}
+
+#email-body #box #middle {
+	padding: 10px 0px 10px 0px;
+	margin: 0px;
+}
+
+#email-body #box #bottom {
+	padding: 0px;
+	height: 0px;
+	margin: 0px;
+}
+
+#email-body #box .visit {
+	font-family: 'Verdana', 'Helvetica', sans-serif;
+	font-size: 11px;
+	color: #7F7F7F;
+}
+
+#email-body h1 {
+	font-family: 'Myriad Pro', 'Myriad Web', Arial, sans-serif;
+	font-size: 18px;
+	color: #7A8B3F;
+	font-weight: normal;
+}
+
+#email-body h2 {
+	font-family: 'Georgia', serif;
+	font-size: 12px;
+	color: #436380;
+	font-weight: normal;
+	font-style: italic;
+}
+
+#email-body #summary {
+	border-bottom: 1px solid #DEDEDE;
+}
+
+#email-body #copyright {
+	text-align: right;
+	color: #999;
+	font-family: 'Lucida Grande';
+	font-size: 9px;
+	padding-right: 0px;
+	line-height: 25px;
+	height: 25px;
+}
+
+#email-body #image {
+	float: right;
+	margin: 0 0 15px 15px;
+}
+</style>
+
+<body>
+	<div id="email-body">
+	<div id="box" style="font-size: 12px; padding: 20px">
+		<div id="top" style="height: 40px; position: relative; margin: 0px 0px 10px 0px;">
+			<img src="http://www.nlralliance.org/images/mail/logo-gray.png">
+		</div>
+		
+		<div id="middle" style="padding: 10px 0px 10px 0px; margin: 0px">
+			
+			<%= yield %>
+		
+			<p><span class="visit" style="font-family: 'Verdana', 'Helvetica', sans-serif; font-size: 11px; color: #7F7F7F">You have received this e-mail because you are subscribed to the NLRA Listhost.<br />If you no longer wish to receive e-mail from us, you may <%= link_to "unsubscribe at any time", :controller => "subscribers", :action => "unsubscribe", :only_path => false %>.
+				<br /><br />Visit us online at <%= link_to nil, :action => 'index', :controller => 'main', :only_path => false %></span></p>
+		
+		</div>
+		
+		<div id="bottom" style="padding: 0px; height: 0px; margin: 0px"></div>
+		
+	</div>
+	</div>
+</body>
+</html>

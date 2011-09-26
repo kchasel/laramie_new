@@ -1,0 +1,56 @@
+<% content_for :body_header do%>
+	Donate to the NLRA
+<% end %>
+
+<% content_for :extra_css do %>
+<%= stylesheet_link_tag 'donate' %>
+<% end %>
+
+
+<% content_for :title do %>
+- Donate to the NLRA
+<% end %>
+<h3>Your donations keep the NLRA fighting the industrialization of the Northern Laramie Range</h3>
+
+<%= form_tag("https://www.paypal.com/cgi-bin/webscr", {:onsubmit => 'return complete_donation()'}) %>
+	<input type="hidden" name="cmd" value="_donations">
+	<input type="hidden" name="item_name" value="Donation to NLRA">
+	<input type="hidden" name="business" value="KXBG9FCAVG3S8">
+	<%= hidden_field_tag :amount %>
+
+<div id="donate_label"><%= label_tag :prefab, '<h2>Donate</h2><h3>Choose or enter an amount to donate</h3>'.html_safe %></div>
+
+<%= select_tag :prefab, "<option value='10'>$10</option><option value='20'>$20</option><option value='50'>$50</option><option value='100'>$100</option><option value='200'>$200</option><option value='other'>Other</option>".html_safe, :onchange => "if(this.value=='other'){new Fx.Reveal($('custom'), { mode: 'horizontal', display: 'inline'}).reveal()}else{new Fx.Reveal($('custom'), {mode: 'horizontal', display: 'inline'}).dissolve();$('custom').value=''}", :style => "margin-top: 10px; margin-bottom: 10px" %>
+	
+<span id="donate_status"><%= text_field_tag :custom, nil, :size => 4, :style => "
+background: url(support/dollar.png) 2px center no-repeat white; 
+padding: 6px 6px 6px 14px;
+font-size: 14px;
+color: #566A47;
+display: none;
+margin: 3px 5px 0 0" %></span>
+
+<%= image_submit_tag "support/link-arrow-green.png", :id => "submit_link", :class => 'submit_image' %>
+
+<div id="paypal">
+	You will be redirected away from this site.
+</div>
+</form>
+
+<h1>Questions about Donating</h1>
+
+<p />
+
+<!-- /////////////////////////////////////////BEGIN FAQ LINKS -->
+
+
+<!-- /////////////////////////////////////////BEGIN FAQ CONTENT -->
+
+<h2 id="tax">Are donations to the NLRA tax deductible?</h2>
+<p>At this time, donations to the NLRA are <b>not</b> tax deductible. Rest assured, however, that all donations will be used exclusively for the NLRA's actions against the industrialization of the Northern Laramie Range. All of the NLRA's employees are volunteers.</p>
+
+<h2 id="secure">Is donating to the NLRA online secure?</h2>
+<p>The online donation procedure is totally secure. All donations are processed through <%= link_to "Paypal", "http://www.paypal.com/" %>, an international standard in online sales and transactions. Your credit card information will be protected by the highest levels of security throughout the process. Once the transaction is complete, you will have the chance to return to the NLRA site.</p>
+
+<h2 id="talk">Can I speak to an NLRA steering committee member before donating?</h2>
+<p>Please don't hesitate to contact the steering committee members regarding donations or anything else! All our contact information may be found below, at the bottom of every page.</p>
